@@ -4,7 +4,7 @@
   "description": "orbital project",
   "main": "app.js",
   "scripts": {
-    "start": "node server.bundle.js",
+    "start": "node ./app.js",
     "build": "webpack",
     "dev": "nodemon ./app.js localhost 3080"
   },
