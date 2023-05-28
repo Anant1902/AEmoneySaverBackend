@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./app.js",
-    "build": "webpack",
+    "build": "node ./app.js",
     "dev": "nodemon ./app.js localhost 3080"
   },
   "keywords": [],
@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19",
-    "webpack": "^4.43.0"
+    "webpack": "^4.46.0"
   }
 }
