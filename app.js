@@ -71,14 +71,16 @@ app.listen(port, () => {
     console.log(`Server listening on the port::${port}`);
 });
 
-// const publicDir = path.join(__dirname, './public')
+const publicDir = path.join(__dirname, './public')
+app.use(express.static(publicDir))
+app.use(express.urlencoded({extended: 'false'}))
+app.use(express.json())
 
-// app.use(express.static(publicDir))
-// app.use(express.urlencoded({extended: 'false'}))
-// app.use(express.json())
+app.set('view engine', 'hbs')
 
-// app.set('view engine', 'hbs')
-
+app.get('/', (req,res) => {
+    res.sendFile(path.join(__dirname, '../my-app/out/index.html'));
+  })
 
 
 // app.post("/auth/register", (req, res) => {    
