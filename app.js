@@ -5,20 +5,13 @@ const dotenv = require('dotenv')
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs")
 
-dotenv.config({ path: './.env'})
+dotenv.config();
 
 const app = express(),
     bodyParser = require("body-parser");
     port = 3080;
 
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_ROOT,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE,
-    ssl: { rejectUnauthorized: true },
-
-})
+const db = mysql.createConnection(process.env.DATABASE_URL);
 
 db.connect((error) => {
     if(error) {
