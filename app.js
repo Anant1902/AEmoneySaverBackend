@@ -17,7 +17,7 @@ const db = mysql.createConnection({
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE,
     ssl: { rejectUnauthorized: true },
-    
+
 
 })
 
@@ -28,9 +28,6 @@ db.connect((error) => {
         console.log("MySQL connected!")
     }
 })
-
-// just for testing purposes
-const users = ['Anant'];
 
 app.use(bodyParser.json());
 
